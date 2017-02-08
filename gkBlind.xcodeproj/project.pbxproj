@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3020356B1E41F2C3001E3C77 /* ruleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3020356A1E41F2C3001E3C77 /* ruleViewController.swift */; };
+		303BDD8E1E3F0FF700ABA950 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F938681E360439001D428A /* ViewController.swift */; };
+		303BDD901E3F39AD00ABA950 /* QAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303BDD8F1E3F39AD00ABA950 /* QAViewController.swift */; };
+		306810AC1E3B27FA00C8DE46 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306810AB1E3B27FA00C8DE46 /* DatabaseController.swift */; };
 		30F938671E360439001D428A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F938661E360439001D428A /* AppDelegate.swift */; };
-		30F938691E360439001D428A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F938681E360439001D428A /* ViewController.swift */; };
 		30F9386C1E360439001D428A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F9386A1E360439001D428A /* Main.storyboard */; };
 		30F9386E1E360439001D428A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30F9386D1E360439001D428A /* Assets.xcassets */; };
 		30F938711E360439001D428A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F9386F1E360439001D428A /* LaunchScreen.storyboard */; };
+		30F9387A1E361B26001D428A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30F938781E361B26001D428A /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3020356A1E41F2C3001E3C77 /* ruleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ruleViewController.swift; sourceTree = "<group>"; };
+		303BDD8F1E3F39AD00ABA950 /* QAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QAViewController.swift; sourceTree = "<group>"; };
+		306810AB1E3B27FA00C8DE46 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		30F938631E360439001D428A /* gkBlind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gkBlind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30F938661E360439001D428A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		30F938681E360439001D428A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		30F938681E360439001D428A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		30F9386B1E360439001D428A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30F9386D1E360439001D428A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30F938701E360439001D428A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30F938721E360439001D428A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30F938791E361B26001D428A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3006DB941E38DDF100C57FC1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				30F938781E361B26001D428A /* Model.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		30F9385A1E360439001D428A = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +70,16 @@
 		30F938651E360439001D428A /* gkBlind */ = {
 			isa = PBXGroup;
 			children = (
+				3006DB941E38DDF100C57FC1 /* Model */,
 				30F938661E360439001D428A /* AppDelegate.swift */,
+				3020356A1E41F2C3001E3C77 /* ruleViewController.swift */,
 				30F938681E360439001D428A /* ViewController.swift */,
+				303BDD8F1E3F39AD00ABA950 /* QAViewController.swift */,
 				30F9386A1E360439001D428A /* Main.storyboard */,
 				30F9386D1E360439001D428A /* Assets.xcassets */,
 				30F9386F1E360439001D428A /* LaunchScreen.storyboard */,
 				30F938721E360439001D428A /* Info.plist */,
+				306810AB1E3B27FA00C8DE46 /* DatabaseController.swift */,
 			);
 			path = gkBlind;
 			sourceTree = "<group>";
@@ -137,8 +157,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30F938691E360439001D428A /* ViewController.swift in Sources */,
+				303BDD8E1E3F0FF700ABA950 /* ViewController.swift in Sources */,
+				303BDD901E3F39AD00ABA950 /* QAViewController.swift in Sources */,
+				306810AC1E3B27FA00C8DE46 /* DatabaseController.swift in Sources */,
 				30F938671E360439001D428A /* AppDelegate.swift in Sources */,
+				3020356B1E41F2C3001E3C77 /* ruleViewController.swift in Sources */,
+				30F9387A1E361B26001D428A /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +287,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JMJFE5DQ8M;
 				INFOPLIST_FILE = gkBlind/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cg.gkBlind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -276,9 +301,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JMJFE5DQ8M;
 				INFOPLIST_FILE = gkBlind/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cg.gkBlind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -302,8 +329,22 @@
 				30F938771E360439001D428A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		30F938781E361B26001D428A /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				30F938791E361B26001D428A /* Model.xcdatamodel */,
+			);
+			currentVersion = 30F938791E361B26001D428A /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 30F9385B1E360439001D428A /* Project object */;
 }

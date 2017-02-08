@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F24b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,12 +20,26 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_image" highlightedImage="logo_image" translatesAutoresizingMaskIntoConstraints="NO" id="vOL-Hf-SKw">
+                                <rect key="frame" x="-91" y="123" width="581" height="421"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vOL-Hf-SKw" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="103" id="2U0-dx-3TB"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="vOL-Hf-SKw" secondAttribute="bottom" constant="123" id="35Q-X6-j8U"/>
+                            <constraint firstItem="vOL-Hf-SKw" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="-91" id="8HJ-Wf-rgW"/>
+                            <constraint firstAttribute="trailing" secondItem="vOL-Hf-SKw" secondAttribute="trailing" constant="-115" id="Zaa-ag-xEr"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="53.600000000000001" y="412.44377811094455"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo_image" width="1047" height="708"/>
+    </resources>
 </document>

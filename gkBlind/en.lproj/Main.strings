@@ -1,0 +1,33 @@
+
+/* Class = "UIButton"; normalTitle = "SKIP"; ObjectID = "2GZ-sB-v4N"; */
+"2GZ-sB-v4N.normalTitle" = "SKIP";
+
+/* Class = "UILabel"; text = "Question Quiz"; ObjectID = "B35-Tn-3LH"; */
+"B35-Tn-3LH.text" = "Question Quiz";
+
+/* Class = "UILabel"; text = "Rules"; ObjectID = "CWe-D6-tya"; */
+"CWe-D6-tya.text" = "Rules";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "Vhq-i8-9OQ"; */
+"Vhq-i8-9OQ.normalTitle" = "Back";
+
+/* Class = "UIButton"; normalTitle = "RULES"; ObjectID = "VrV-2R-4DD"; */
+"VrV-2R-4DD.normalTitle" = "RULES";
+
+/* Class = "UILabel"; text = "Score :     "; ObjectID = "Xdv-fJ-xjr"; */
+"Xdv-fJ-xjr.text" = "Score :     ";
+
+/* Class = "UIButton"; normalTitle = "SUBMIT"; ObjectID = "dCF-cH-ozA"; */
+"dCF-cH-ozA.normalTitle" = "SUBMIT";
+
+/* Class = "UILabel"; text = "Question Quiz   \n                 "; ObjectID = "dKp-mS-NOY"; */
+"dKp-mS-NOY.text" = "Question Quiz   \n                 ";
+
+/* Class = "UIButton"; normalTitle = "START"; ObjectID = "hbv-y6-4zf"; */
+"hbv-y6-4zf.normalTitle" = "START";
+
+/* Class = "UIButton"; normalTitle = "OK"; ObjectID = "im6-15-jUA"; */
+"im6-15-jUA.normalTitle" = "OK";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "j1L-5F-8NT"; */
+"j1L-5F-8NT.text" = "0";
