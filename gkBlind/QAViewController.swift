@@ -63,15 +63,11 @@ public class QAViewController: UIViewController, SFSpeechRecognizerDelegate {
      public override func viewDidLoad()
      {
         super.viewDidLoad()
-        tapPressed()
-        
         QuestionCount()
         optionCount()
         print ("executed view didload")
         loadQuestion(QuestionId: QuestionId)
-        
-       // recordingButton.isEnabled = false
-        
+        tapPressed()
     }
     
     override public func viewDidAppear(_ animated: Bool)
@@ -93,17 +89,17 @@ public class QAViewController: UIViewController, SFSpeechRecognizerDelegate {
                 case .denied:
                     break
                    // self.recordingButton.isEnabled = false
-                    print("Action Denied")
+                    //print("Action Denied")
                     
                 case .restricted:
                     break
                    // self.recordingButton.isEnabled = false
-                    print("Speech recognition restricted on this device")
+                    //print("Speech recognition restricted on this device")
                     
                 case .notDetermined:
                     break
                    // self.recordingButton.isEnabled = false
-                    print("Speech recognition not yet authorized")
+                    //print("Speech recognition not yet authorized")
                 }
             }
         }
@@ -148,10 +144,7 @@ public class QAViewController: UIViewController, SFSpeechRecognizerDelegate {
             
         }
     }
-    
-    // *************************On Submit Button s******************
-    
-    
+ 
     // *************************Question Fetch from Core Data******************
     func loadQuestion(QuestionId: Int)
     {
@@ -159,7 +152,7 @@ public class QAViewController: UIViewController, SFSpeechRecognizerDelegate {
         IsSelected  = []
         arrayOfOptionButton  = []
         
-        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        _ = (UIApplication.shared.delegate) as! AppDelegate
         var QuestionTag : String?
         let context = DatabaseController.persistentContainer.viewContext
         let question:Question_Master = NSEntityDescription.insertNewObject(forEntityName: "Question_Master", into: context) as! Question_Master
@@ -175,7 +168,7 @@ public class QAViewController: UIViewController, SFSpeechRecognizerDelegate {
                 do
                 {
                     let Questionresult = try DatabaseController.persistentContainer.viewContext.fetch(fetchRequests)
-                    var searchResults = (Questionresult as NSArray).filtered(using: predicate)
+                    _ = (Questionresult as NSArray).filtered(using: predicate)
                     if let questiontag = (mainresult.questionString)
                     {
                         lblQuestion.text = "\(questiontag)"
@@ -198,7 +191,7 @@ public class QAViewController: UIViewController, SFSpeechRecognizerDelegate {
         let fetchRequestsoption:NSFetchRequest<Option_Master> = Option_Master.fetchRequest()
         //  let Optionpredicate = NSPredicate(format: "question_id == \(mainresult.questionId)")
         do {
-            let OpsearchResults = try DatabaseController.getContext().fetch(fetchRequestsoption)
+            _ = try DatabaseController.getContext().fetch(fetchRequestsoption)
             var index: Int = 1
             var Optionindex: Int = 1
             let optionResults = try DatabaseController.persistentContainer.viewContext.fetch(fetchRequestsoption)
@@ -293,14 +286,14 @@ public class QAViewController: UIViewController, SFSpeechRecognizerDelegate {
     // *************************Question Count ******************
     func QuestionCount()
     {
-        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        _ = (UIApplication.shared.delegate) as! AppDelegate
         let context = DatabaseController.persistentContainer.viewContext
         let question:Question_Master = NSEntityDescription.insertNewObject(forEntityName: "Question_Master", into: context) as! Question_Master
         let fetchRequests:NSFetchRequest<Question_Master> = Question_Master.fetchRequest()
         
         do {
             let searchResults = try DatabaseController.getContext().fetch(fetchRequests)
-            for result in searchResults as! [Question_Master]
+            for _ in searchResults 
                 {
                     count = searchResults.count - 1
                 
@@ -318,12 +311,12 @@ public class QAViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     func optionCount()
     {
-        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
-        let context = DatabaseController.persistentContainer.viewContext
+        _ = (UIApplication.shared.delegate) as! AppDelegate
+        _ = DatabaseController.persistentContainer.viewContext
         
         let fetchRequestsoption:NSFetchRequest<Option_Master> = Option_Master.fetchRequest()
         do {
-            let OpsearchResults = try DatabaseController.getContext().fetch(fetchRequestsoption)
+            _ = try DatabaseController.getContext().fetch(fetchRequestsoption)
             let optionResults = try DatabaseController.persistentContainer.viewContext.fetch(fetchRequestsoption)
             do
             {
@@ -369,7 +362,7 @@ public class QAViewController: UIViewController, SFSpeechRecognizerDelegate {
     override public func viewDidDisappear(_ animated: Bool)
     {
         super.viewDidDisappear(animated)
-        speakTalk.stopSpeaking(at:AVSpeechBoundary.immediate)
+        //speakTalk.stopSpeaking(at:AVSpeechBoundary.immediate)
     }
     
     //===================== Speech Recognition ============================//
@@ -490,9 +483,6 @@ public class QAViewController: UIViewController, SFSpeechRecognizerDelegate {
                 print("recognition Task nilled")
                 self.optionsoundcatch = ""
                 print("\(self.optionsoundcatch)")
-                
-             //   self.recordingButton.isEnabled = true
-               // self.recordingButton.setTitle("Start Recording", for: [])
             }
             
         }
@@ -507,15 +497,7 @@ public class QAViewController: UIViewController, SFSpeechRecognizerDelegate {
         try audioEngine.start()
     }
     
-    // MARK: SFSpeechRecognizerDelegate
-    
-    public func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
-        if available {
-           // recordingButton.isEnabled = true
-        } else {
-           // recordingButton.isEnabled = false
-        }
-    }
+       // *************************On Submit Button s******************
     
     @IBAction func submitBtn(_ sender: Any)
     {
@@ -531,12 +513,13 @@ public class QAViewController: UIViewController, SFSpeechRecognizerDelegate {
         {
             score = score + Points
             lblScore.text = "\(score)"
-            Audio(Input : "Your have Selected, \(IsOption)")
+            Audio(Input : "Your have Selected, \(IsSelected)")
             msg = "Right Answer . . . "
-            Audio(Input : "  Your Score is . .  \(score)")
             showAlert(msg: msg)
-            
-        }else{
+            Audio(Input : "  Your Score is . .  \(score)")
+          }
+        else
+        {
             msg = "Oops  Worng Answer"
             showAlert(msg: msg)
         }
@@ -549,11 +532,11 @@ public class QAViewController: UIViewController, SFSpeechRecognizerDelegate {
  
     func tapPressed()
     {
-        let selector : Selector = "tapFunc"
+        let selector : Selector = #selector(QAViewController.tapFunc)
         let tapGuesture = UITapGestureRecognizer(target : self, action : selector)
         tapGuesture.numberOfTouchesRequired = 1
         view.addGestureRecognizer(tapGuesture)
-        
+        speakTalk.stopSpeaking(at:AVSpeechBoundary.immediate)
         
     }
     func tapFunc()
